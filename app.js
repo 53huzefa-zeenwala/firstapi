@@ -5,9 +5,13 @@ const bodyParser = require("body-parser")
 app.listen(3000)
 app.use(bodyParser.json())
 
-// route
+// post route
 const postsRoute = require('./routes/posts')
 app.use('/posts', postsRoute)
+
+// order route
+const ordersRoute = require('./routes/orders')
+app.use('/orders', ordersRoute)
 
 app.get('/', (req, res) => {
     res.send('We are on home')
