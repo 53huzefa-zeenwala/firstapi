@@ -3,10 +3,32 @@ const Post = require('../models/Post')
 
 const router = express.Router()
 
-//getting all posta
+//getting limited posts
 router.get('/', async (req, res) => {
     try {
-        const posts = await Post.find()
+        if (req.query.page === 'all') {
+            const posts = await Post.find()
+            res.status(200).json(posts)
+        } else {
+            const posts = await Post.find(req.query.category && {
+                category: req.query.category
+            })
+                .limit(4)
+                .skip(req.query.page * 4)
+            res.status(200).json(posts)
+        }
+    } catch (error) {
+        res.status(400).json({ message: error })
+    }
+})
+
+// getting document count
+router.get('/documentcount', async (req, res) => {
+    try {
+        const posts = await Post.find(req.query.category && {
+            category: req.query.category
+        })
+            .countDocuments()
         res.status(200).json(posts)
     } catch (error) {
         res.status(400).json({ message: error })
@@ -27,7 +49,8 @@ router.get('/:postId', async (req, res) => {
 router.post('/', async (req, res) => {
     const post = new Post({
         title: req.body.title,
-        description: req.body.description
+        description: req.body.description,
+        category: req.body.category
     })
     try {
         const savedPost = await post.save()
@@ -55,7 +78,8 @@ router.patch('/:postId', async (req, res) => {
             {
                 $set: {
                     title: req.body.title,
-                    description: req.body.description
+                    description: req.body.description,
+                    category: req.body.category
                 }
             })
         res.status(200).json(deletePost)
