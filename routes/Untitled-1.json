@@ -1,0 +1,35 @@
+{
+  "title": "Silver Black Half Rim Cat Eye Eyeglasse",
+  "description": "Muted matte finishes come together with suble designs, creating a collection that is all about understated glamor.",
+  "price": 1700,
+  "mrp": 3000,
+  "discount": 40.05,
+  "category": "bag",
+  "brand": "Vincent Chase",
+  "frametype": "slim",
+  "color": "black",
+  "productdetail": [
+    {
+      "name": "frame material",
+      "detail": "metal",
+      "_id": "6367c749d5a5541ae6979ec1"
+    },
+    {
+      "name": "frame size",
+      "detail": "narrow",
+      "_id": "6367c749d5a5541ae6979ec2"
+    },
+    {
+      "name": "dimenstion",
+      "detail": "52cm 17cm 135cm",
+      "_id": "6367c749d5a5541ae6979ec3"
+    }
+  ],
+  "images": [
+    "http://res.cloudinary.com/indvidual/image/upload/v1666788666k2ejxodhqxo96mypjprj.jpg",
+    "http://res.cloudinary.com/indvidual/image/upload/v1666788656/wyblblubnxzmwhs9srdv.jpg",
+    "http://res.cloudinary.com/indvidual/image/upload/v1666788641/oqstpmidmgcdi4lvf4pz.jpg",
+    "http://res.cloudinary.com/indvidual/image/upload/v1666788568/ydpob57tw2j50yvqjehd.jpg"
+  ],
+  "instock": 5
+}
