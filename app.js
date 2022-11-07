@@ -5,6 +5,10 @@ const bodyParser = require("body-parser")
 app.listen(3000)
 app.use(bodyParser.json())
 
+//product route
+const productsRoute = require('./routes/products')
+app.use('/products', productsRoute)
+
 // post route
 const postsRoute = require('./routes/posts')
 app.use('/posts', postsRoute)
